@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark-blue: #364958;
+  --color-blue: #3b6064;
+  --color-teal: #55828b;
+  --color-light-green: #87bba2;
+  --color-pale-green: #c9e4ca;
+  --color-text: #333333;
+  --color-background: #f7f7f7;
+  --color-white: #ffffff;
+  --color-danger: #e57373;
+  --color-warning: #ffb74d;
+  --color-success: #81c784;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Анимации */
+@keyframes fadeInSoft {
+  0% { opacity: 0; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Компоненты */
+.button {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.button--primary {
+  @apply bg-[--color-blue] text-white hover:bg-[--color-dark-blue] focus:ring-[--color-teal];
+}
+
+.button--secondary {
+  @apply bg-[--color-light-green] text-[--color-dark-blue] hover:bg-[--color-pale-green] focus:ring-[--color-teal];
+}
+
+.button--danger {
+  @apply bg-[--color-danger] text-white hover:bg-red-500 focus:ring-red-400;
+}
+
+.input {
+  @apply w-full px-3 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#55828b] transition-all;
+}
+
+.card {
+  @apply bg-[--color-white] rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg;
+  animation: fadeInSoft 0.3s ease-in-out;
+}
+
+.table {
+  @apply w-full border-separate border-spacing-y-2;
+}
+
+.table__header {
+  @apply text-left text-sm uppercase text-[--color-white] bg-[--color-teal] px-4 py-2 rounded-t-md;
+}
+
+.table__row {
+  @apply bg-[--color-white] hover:bg-[#d3d3d3] transition;
+}
+
+.table__cell {
+  @apply px-4 py-2 text-sm text-[--color-text];
+}
+
+.badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge--success {
+  @apply bg-[--color-pale-green] text-[--color-dark-blue];
+}
+
+.badge--warning {
+  @apply bg-[--color-warning] text-[--color-dark-blue];
+}
+
+.badge--danger {
+  @apply bg-[--color-danger] text-white;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-6;
+}
+
+.section {
+  @apply py-12;
+}
+
+.section__title {
+  @apply text-3xl font-bold text-[--color-dark-blue] mb-8 border-b border-gray-200 pb-2;
+}
+
+.form {
+  @apply grid gap-6;
+}
+
+.form__group {
+  @apply flex flex-col gap-2;
+}
+
+.form__label {
+  @apply text-sm font-medium text-gray-600;
+}
+
+.form__error {
+  @apply text-xs text-red-500 mt-1;
+}
+
+.modal {
+  @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50;
+  animation: fadeInSoft 0.3s ease-in-out;
+}
+
+.modal__content {
+  @apply bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg;
+}
+
+.modal__header {
+  @apply text-xl font-semibold text-[--color-dark-blue] mb-4;
+}
+
+.modal__footer {
+  @apply flex justify-end gap-4 mt-6;
+}
+
+.page {
+  animation: fadeInSoft 0.4s ease-in-out;
+}
